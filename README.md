@@ -1,2 +1,2 @@
--Use multiple linear regression to predict housing prices off of input variables
--Use gradient descent
+-create neural network to predict housing price
+-create simple custom neural network library from scratch
