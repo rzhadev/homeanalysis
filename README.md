@@ -1,1 +1,2 @@
-# homeanalysis
+-Use multiple linear regression to predict housing prices off of input variables
+-Use gradient descent
