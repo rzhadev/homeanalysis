@@ -1,2 +1,0 @@
--create neural network to predict housing price
--create simple custom neural network library from scratch
