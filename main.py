@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import neuralnetwork as nn
 import math
 
-brain = nn.NeuralNetwork(2,2,1)
+brain = nn.NeuralNetwork(2,2,2)
 input = [1,0]
-output = brain.feedforward(input,lambda x: 1 / (1 + math.exp(-x)))
-print(output)
+targets = [1,1]
+output = brain.train(input,targets,lambda x: 1 / (1 + math.exp(-x)))
