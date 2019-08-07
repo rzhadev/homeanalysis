@@ -9,7 +9,7 @@ class NeuralNetwork:
         self.oh_weights = np.random.random(size=(self.outputNodes, self.hiddenNodes))*2 - 1
         self.h_bias = np.random.random()*2-1
         self.o_bias = np.random.random()*2-1
-        self.alpha = 0.1
+        self.alpha = 0.06
         self.activation = func['activation']
         self.deactivation = func['deactivation']
 
@@ -22,7 +22,7 @@ class NeuralNetwork:
         output = np.matmul(self.oh_weights,hidden)
         output = np.add(output,self.o_bias)
         output = np.reshape(np.array(list(map(self.activation, output))),(output.shape))
-        return output.tolist()
+        return output.tolist().index(max(output))
     def train(self,inputs,targets):
         #feedforward
         inputs = np.reshape(np.asmatrix(inputs),(-1,1))
@@ -34,7 +34,7 @@ class NeuralNetwork:
         output = np.reshape(np.array(list(map(self.activation, output))),(output.shape))
         
         #back propagation and gradient descent
-        targets = np.asmatrix(targets)
+        targets = np.reshape(np.asmatrix(targets),(-1,1))
         error = targets - output
         gradient = np.reshape(np.array(list(map(self.deactivation, output))),(output.shape))
         gradient *= error
