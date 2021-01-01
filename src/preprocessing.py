@@ -1,7 +1,7 @@
 import numpy as np
 import struct as st 
 import json 
-with open(r'C:\Users\Richard Zha\Documents\toyneuralnet.py\data\mnist\filelocations.json') as f:
+with open(r'filelocations.json') as f:
     locations = json.load(f)
 '''
     -load dataset from file
