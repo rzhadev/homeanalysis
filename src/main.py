@@ -4,10 +4,10 @@ import numpy as np
 import math
 
 training_size = 60000
-training_images = np.load(r'C:\Users\Richard Zha\Documents\toyneuralnet.py\data\mnist\train\train_images.npy')
-training_labels = np.load(r'C:\Users\Richard Zha\Documents\toyneuralnet.py\data\mnist\train\train_labels.npy')
-testing_images = np.load(r'C:\Users\Richard Zha\Documents\toyneuralnet.py\data\mnist\test\test_images.npy')
-testing_labels = np.load(r'C:\Users\Richard Zha\Documents\toyneuralnet.py\data\mnist\test\test_labels.npy')
+training_images = np.load(r'train_images.npy')
+training_labels = np.load(r'train_labels.npy')
+testing_images = np.load(r'test_images.npy')
+testing_labels = np.load(r'test_labels.npy')
 brain = nn.NeuralNetwork(784,20,10,{'activation':lambda x: 1 / (1 + math.exp(-x)),'deactivation':lambda y : y * (1 - y)})
 for x in range(5):
     for i in range(60000):
